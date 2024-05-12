@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "./search.module.css";
 
 const URL = "https://api.spoonacular.com/recipes/complexSearch";
 const API_KEY = "79e1dc06e5be459d96049c3f7287dd4f";
@@ -15,8 +16,9 @@ export default function Search({ foodData, setfoodData }) {
     fetchFood();
   }, [query]);
   return (
-    <div>
+    <div className={styles.searchContainer}>
       <input
+        className={styles.input}
         type="text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
